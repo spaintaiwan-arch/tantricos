@@ -1,0 +1,663 @@
+/* ===================================
+   Amores tántricos - Landing Page
+   Diseño con paleta rosa/magenta profundo
+   =================================== */
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-dark: #1a0d1f;
+    --color-dark-2: #251429;
+    --color-gray: #3a2540;
+    --color-text: #f5e8f7;
+    --color-text-dim: #c9a8d1;
+    --color-accent: #ad1457;
+    --color-accent-dim: #7a0e3e;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 13, 31, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(173, 20, 87, 0.2);
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-back,
+.nav-cta {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.nav-back:hover {
+    color: var(--color-accent);
+}
+
+.nav-cta {
+    background: var(--color-accent);
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.nav-cta:hover {
+    background: var(--color-accent-dim);
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a0d1f 0%, #251429 100%);
+    z-index: -1;
+}
+
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(173, 20, 87, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(173, 20, 87, 0.08) 0%, transparent 50%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.hero-label {
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 4em;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.hero-tagline {
+    font-family: var(--font-serif);
+    font-size: 1.8em;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--color-accent);
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.hero-description {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--color-text-dim);
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: translateY(-10px);
+}
+
+.status-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--color-accent-dim);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(173, 20, 87, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
+}
+
+.btn-secondary:hover {
+    background: var(--color-text);
+    color: var(--color-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-gray);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* ===================================
+   Quote Section
+   =================================== */
+.quote-section {
+    padding: 80px 0;
+    background: var(--color-dark-2);
+    border-top: 1px solid rgba(173, 20, 87, 0.1);
+    border-bottom: 1px solid rgba(173, 20, 87, 0.1);
+}
+
+.quote {
+    font-family: var(--font-serif);
+    font-size: 2.2em;
+    font-style: italic;
+    text-align: center;
+    color: #fff;
+    line-height: 1.5;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   Synopsis Section
+   =================================== */
+.synopsis {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #fff;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--color-text-dim);
+    margin-bottom: 40px;
+}
+
+.synopsis-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.synopsis-intro {
+    margin-bottom: 40px;
+}
+
+.lead {
+    font-size: 1.3em;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.lead.highlight {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-style: italic;
+}
+
+.synopsis-body p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--color-text-dim);
+    margin-bottom: 25px;
+}
+
+.synopsis-body p.highlight {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-style: italic;
+}
+
+.synopsis-question {
+    font-size: 1.2em !important;
+    color: #fff !important;
+    font-style: italic;
+    margin: 40px 0 !important;
+}
+
+.book-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    padding: 40px;
+    background: var(--color-dark-2);
+    border-radius: 10px;
+    border: 1px solid rgba(173, 20, 87, 0.1);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-label {
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.detail-value {
+    font-size: 1em;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* ===================================
+   Taglines Section
+   =================================== */
+.taglines {
+    padding: 100px 0;
+    background: var(--color-dark-2);
+}
+
+.taglines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tagline-card {
+    background: var(--color-gray);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 3px solid var(--color-accent);
+    transition: all 0.3s ease;
+}
+
+.tagline-card:hover {
+    transform: translateX(5px);
+    background: var(--color-dark);
+}
+
+.tagline-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* ===================================
+   Author Section
+   =================================== */
+.author {
+    padding: 100px 0;
+}
+
+.author-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.author-text h3 {
+    font-family: var(--font-serif);
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.author-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--color-text-dim);
+    margin-bottom: 20px;
+}
+
+.author-text em {
+    color: var(--color-accent);
+    font-style: italic;
+}
+
+.author-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.author-link:hover {
+    transform: translateX(5px);
+}
+
+/* ===================================
+   Newsletter Section
+   =================================== */
+.newsletter {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--color-dark-2) 0%, var(--color-dark) 100%);
+    border-top: 1px solid rgba(173, 20, 87, 0.1);
+}
+
+.newsletter-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-title {
+    font-family: var(--font-serif);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.newsletter-description {
+    font-size: 1.2em;
+    color: var(--color-text-dim);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.newsletter-description em {
+    color: var(--color-accent);
+    font-style: italic;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 18px 25px;
+    background: var(--color-gray);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: var(--color-text);
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background: var(--color-dark);
+}
+
+.newsletter-input::placeholder {
+    color: var(--color-text-dim);
+}
+
+.newsletter-btn {
+    padding: 18px 40px;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: var(--color-accent-dim);
+    transform: translateY(-2px);
+}
+
+.newsletter-note {
+    font-size: 0.9em;
+    color: var(--color-text-dim);
+    font-style: italic;
+}
+
+/* ===================================
+   More Books Section
+   =================================== */
+.more-books {
+    padding: 100px 0;
+}
+
+.more-books-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+    background: var(--color-dark-2);
+    padding: 60px 0 30px;
+    border-top: 1px solid rgba(173, 20, 87, 0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: var(--color-text-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--color-accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(173, 20, 87, 0.1);
+    color: var(--color-text-dim);
+    font-size: 0.9em;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 968px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 3em;
+    }
+
+    .hero-tagline {
+        font-size: 1.5em;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .taglines-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .hero-tagline {
+        font-size: 1.3em;
+    }
+
+    .quote {
+        font-size: 1.6em;
+    }
+
+    .section-title {
+        font-size: 2.2em;
+    }
+
+    .hero-image img {
+        max-width: 280px;
+    }
+
+    .status-badge {
+        top: 10px;
+        right: 10px;
+        font-size: 0.75em;
+        padding: 6px 15px;
+    }
+
+    .book-details {
+        grid-template-columns: 1fr;
+    }
+}
